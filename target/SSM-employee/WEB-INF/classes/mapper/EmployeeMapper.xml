@@ -13,9 +13,9 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.fq.domain.Employee" >
-    insert into employee (id, name, age, 
+    insert into employee (id, name, age,
       gender, address)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER},
       #{gender,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.fq.domain.Employee" >
@@ -33,6 +33,6 @@
   </select>
   <select id="selectAll" resultMap="BaseResultMap" >
     select id, name, age, gender, address
-    from employee
+    from employee order by id desc
   </select>
 </mapper>
